@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSpot - Fashion Blog</title>
+    <meta name="description" content="StyleSpot - Your daily dose of fashion inspiration, trends, and style tips">
+    <meta name="theme-color" content="#4285f4">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+    
+    <div class="container">
+        <header role="banner">
+            <h1><i class="fas fa-tshirt" aria-hidden="true"></i> StyleSpot</h1>
+            <p>Your daily fashion inspiration</p>
+            
+        </header>
+
+        <main id="main-content" role="main">
+            <!-- Home page content -->
+            <div id="home-page" class="active">
+                <div class="welcome-card">
+                    <div class="welcome-text">
+                        <h2>Discover the Latest Fashion Trends</h2>
+                        <p>StyleSpot brings you the latest fashion trends, style tips, and outfit inspiration. Join our community of fashion enthusiasts and stay updated with the hottest looks.</p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-camera" aria-hidden="true"></i>
+                                <span>Daily Outfit Posts</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-tags" aria-hidden="true"></i>
+                                <span>Trending Styles</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                <span>Style Community</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-form">
+                        <h3>Log in to continue</h3>
+                        <div id="form-errors" class="error-container" role="alert" aria-live="assertive"></div>
+                        <div class="form-group">
+                            <label for="username"><i class="fas fa-user" aria-hidden="true"></i></label>
+                            <input type="text" id="username" placeholder="Username or Email" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="fas fa-lock" aria-hidden="true"></i></label>
+                            <input type="password" id="password" placeholder="Password" required aria-required="true" minlength="6">
+                        </div>
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#" class="forgot-password">Forgot password?</a>
+                        </div>
+                        <button id="login-btn" class="gradient-btn" type="button">
+                            <span class="button-text">Log In</span>
+                            <span class="loading-spinner hidden"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+                        </button>
+                        <div class="or-divider">
+                            <span>or</span>
+                        </div>
+                        <button id="guest-login-btn" class="gradient-btn start-btn" type="button">
+                            <span class="button-text">Continue as Guest</span>
+                            <span class="loading-spinner hidden"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                        <p class="signup-text">Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat interface -->
+            <div id="chat-interface" class="hidden" aria-live="polite" aria-atomic="false">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="message bot">
+                            <div class="message-content">
+                                <p>Hello! I'm StyleSpot, your personal fashion assistant. Ask me about the latest trends, outfit ideas, or style advice, and I'll help you look your best!</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-input">
+                        <input type="text" id="user-message" placeholder="What should I wear to a summer wedding?" aria-label="Type your message" maxlength="250">
+                        <div class="input-actions">
+                            <div class="char-counter"><span id="char-count">0</span>/250</div>
+                            <button id="send-btn" aria-label="Send message"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <span class="developed-by">Developed by:</span>
+                <a href="#" class="social-btn website-btn" aria-label="Visit our website">
+                    <span>Nishtha</span>
+                </a>
+                <a href="#" class="social-btn instagram-btn" aria-label="Follow us on Instagram">
+                    <span>Yanshu</span>
+                </a>
+                <a href="#" class="social-btn pinterest-btn" aria-label="Follow us on Pinterest">
+                    <span>Akhil</span>
+                </a>
+            </div>
+        </main>
+
+        <footer role="contentinfo">
+            <p>&copy; 2025 StyleSpot - Fashion Blog</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create an Account</h3>
+                <button class="close-btn" id="close-signup-modal">&times;</button>
+            </div>
+            <div class="signup-form">
+                <div id="signup-errors" class="error-container" role="alert" aria-live="assertive"></div>
+                <div class="form-group">
+                    <label for="signup-name"><i class="fas fa-user" aria-hidden="true"></i></label>
+                    <input type="text" id="signup-name" placeholder="Full Name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="signup-email"><i class="fas fa-envelope" aria-hidden="true"></i></label>
+                    <input type="email" id="signup-email" placeholder="Email Address" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password"><i class="fas fa-lock" aria-hidden="true"></i></label>
+                    <input type="password" id="signup-password" placeholder="Password (min. 6 characters)" required aria-required="true" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password"><i class="fas fa-lock" aria-hidden="true"></i></label>
+                    <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required aria-required="true" minlength="6">
+                </div>
+                <div class="terms-checkbox">
+                    <label>
+                        <input type="checkbox" id="terms-checkbox" required aria-required="true">
+                        I agree to the <a href="#" class="modal-link">Terms of Service</a> and <a href="#" class="modal-link">Privacy Policy</a>
+                    </label>
+                </div>
+                <button id="signup-btn" class="gradient-btn" type="button">
+                    <span class="button-text">Create Account</span>
+                    <span class="loading-spinner hidden"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
