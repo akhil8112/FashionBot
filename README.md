@@ -5,7 +5,7 @@ A responsive web application that recommends fashion blogs along with their site
 ## Technologies Used
 - HTML5
 - CSS3 (with responsive design)
-- Vanilla JavaScript
+- JavaScript
 - RESTful API integration
 - Font Awesome for icons
 
